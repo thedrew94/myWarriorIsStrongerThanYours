@@ -4,19 +4,20 @@
 
 :root {
   /* COLOR PALETTE */
-  --color-001: #122661;
-  --color-002: #178163;
-  --color-003: #fff;
-  --color-004: #000;
-  --color-005: #2ccf9a;
-  --color-006: #051937;
-  --color-007: #198662;
-  --color-008: #808080;
-  --color-009: #7582a6;
-  --color-010: #e50000;
-  --color-011: #309b67;
-  --color-012: #27b470;
-  --color-013: #174737;
+  --color-001: #f9e179;
+  --color-002: #e0c072;
+  --color-003: #ebb575;
+  --color-004: #d6904c;
+  --color-005: #aa835f;
+  --color-006: #8d7356;
+  --color-007: #aa7448;
+  --color-008: #6e422a;
+  --color-009: #492d1e;
+  --color-010: #301e14;
+  --color-011: #130805;
+  --color-012: #b9b2a1;
+  --color-013: #515350;
+  --color-014: #f0e7d7;
 
   /* TYPOGRAPHY */
   --font-size-h1: 4.6rem;
@@ -28,23 +29,13 @@
   --font-size-p: 1.6rem;
 
   /* OTHERS */
-  --cursor: url(./assets/cursor_16.png) 0 0, auto !important;
+  --cursor: url("./assets/cursor_16.png") 0 0, auto !important;
 }
 
-/* SET THE STYLES BASED ON THE USER SYSTEM PREFERENCES FOR DARK THEME OR LIGHT THEME */
 @media (prefers-color-scheme: dark) {
-  /* IMPLEMENT THE FOLLOWING IF WE WANT TO ALLOW THE USER TO TOGGLE MANUALLY LIGHT DARK MODE */
-  /* :root:not(.light) {
-    This will apply if no class is set OR if 'dark' class is there
-    --decor-color-1: green;
-    Other dark theme variables
-  } */
 }
 
-/* if light will use already the above :root variables */
 @media (prefers-color-scheme: light) {
-  /* :root {
-  } */
 }
 
 /* CUSTOM STYLES SETTINGS */
@@ -72,7 +63,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #fff;
+  color: var(--color-012);
+  background-color: var(--color-008);
   cursor: var(--cursor);
 }
 
@@ -330,3 +322,53 @@ img:not([src]) {
 /* /////////////////////////////// */
 /* SCROLLBAR END */
 /* /////////////////////////////// */
+
+.equipment_slot {
+  --slot-size: 80px;
+  position: relative;
+  min-width: var(--slot-size);
+  width: var(--slot-size);
+  max-width: var(--slot-size);
+  aspect-ratio: 1;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 0px #2d1708 inset, 0px 0px 4px 1px var(--color-011);
+  -webkit-box-shadow: 0px 0px 8px 0px #2d1708 inset, 0px 0px 4px 1px var(--color-011);
+  -moz-box-shadow: 0px 0px 8px 0px #2d1708 inset, 0px 0px 4px 1px var(--color-011);
+}
+
+.equipment_slot_assigned {
+  background-color: #4e4540;
+  background: radial-gradient(circle farthest-corner at center center, #493f3b 0%, #251d19 80%);
+  border: 2px solid var(--color-013);
+}
+
+.equipment_slot_empty {
+  background-color: var(--color-010);
+  border: 2px solid var(--color-006);
+}
+
+.equipment_slot_empty::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 55%;
+  height: 55%;
+  border: 2px solid rgb(58, 37, 28, 0.35);
+  border-radius: 0.5em;
+  background-color: rgb(58, 37, 28, 0.35);
+  transform: translate(-50%, -50%);
+}
+
+.equipment_slot_empty::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 60.5%;
+  height: 60.5%;
+  border: 2px solid rgb(58, 37, 28, 0.35);
+  border-radius: 0.5em;
+  background-color: rgb(58, 37, 28, 0.35);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
