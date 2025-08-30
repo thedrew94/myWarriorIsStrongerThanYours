@@ -11,9 +11,12 @@ export default function WarriorPreview() {
       </div>
       <div className="warrior">
         <img src={warrior} alt="Warrior image" />
-        <div className="warrior_info">
-          <h6>Dark Knight</h6>
-          <button>I</button>
+        <div className="warrior_action_btns">
+          <div className="warrior_info">
+            <h6>Dark Knight</h6>
+            <button>I</button>
+          </div>
+          <button className="start_fight_btn">Start fight!</button>
         </div>
       </div>
       <div className="warrior_preview_ul">
