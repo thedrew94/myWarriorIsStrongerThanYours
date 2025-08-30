@@ -72,6 +72,7 @@ html {
 
 body {
   overflow: hidden;
+  padding: 10px;
 }
 
 a,
@@ -404,6 +405,50 @@ img:not([src]) {
   -moz-box-shadow: 0px 0px 2px 0px var(--color-011);
 }
 
+.warrior_stats_info {
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 280px;
+  height: 40px;
+  border: 1px solid var(--color-011);
+  border-radius: 10px;
+  background-color: #502e23;
+  box-shadow: 0px 0px 2px 0px var(--color-011);
+  -webkit-box-shadow: 0px 0px 2px 0px var(--color-011);
+  -moz-box-shadow: 0px 0px 2px 0px var(--color-011);
+  transform: translateX(-50%);
+}
+
+.warrior_stats_info::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  background-color: #46261e;
+}
+
+.warrior_stats_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warrior_stats_btn h6 {
+  font-size: var(--font-size-p);
+  color: var(--color-001);
+}
+
 .warrior_stats_decor {
   position: absolute;
   top: 50%;
@@ -703,4 +748,96 @@ img:not([src]) {
 
 .fight_btn h6 {
   font-size: 1.8rem !important;
+}
+
+.warrior_skills {
+  position: relative;
+  max-width: 600px;
+  height: 300px;
+  padding: 10px;
+  background-color: #5a3723;
+  border-top: 3px solid #442720;
+  border-bottom: 3px solid #442720;
+  border-radius: 6px;
+  border-top-left-radius: unset;
+  box-shadow: 0px 0px 2px 0px var(--color-011);
+  -webkit-box-shadow: 0px 0px 2px 0px var(--color-011);
+  -moz-box-shadow: 0px 0px 2px 0px var(--color-011);
+}
+
+.warrior_skill_li {
+  display: grid;
+  grid-template-columns: minmax(100px, 100px) 1fr minmax(100px, 100px);
+  padding: 10px 0;
+  border-bottom: 2px solid var(--color-009);
+}
+
+.warrior_skills_info h6 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.warrior_skills_info p {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+.skill_btn {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  width: 100px;
+  min-height: 40px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #df9770;
+  border: 1px solid var(--color-011);
+  border-bottom: 3px solid var(--color-011);
+  border-radius: 15px;
+  color: #872f11;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.75);
+
+  background: radial-gradient(ellipse farthest-corner at center center, #df9770 0%, #c67658 80%);
+  background: -webkit-radial-gradient(ellipse farthest-corner at center center, #df9770 0%, #c67658 80%);
+  background: -moz-radial-gradient(ellipse farthest-corner at center center, #df9770 0%, #c67658 80%);
+}
+
+.skill_btn::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid var(--color-012);
+  border-radius: inherit;
+}
+
+.warrior_skills_nav {
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  background-color: #342016;
+}
+
+.warrior_skills_nav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.warrior_skills_nav button.warrior_skills_sltd {
+  border: 1px solid var(--color-011);
+  background-color: #4b2a21;
 }
