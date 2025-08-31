@@ -71,7 +71,6 @@ html {
 }
 
 body {
-  overflow: hidden;
   padding: 10px;
 }
 
@@ -390,6 +389,13 @@ img:not([src]) {
   opacity: 0.75;
 }
 
+.warrior_consumables {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 .warrior_stats {
   position: relative;
   display: grid;
@@ -558,6 +564,8 @@ img:not([src]) {
   display: grid;
   grid-template-columns: minmax(90px, 90px) minmax(280px, 280px) minmax(90px, 90px);
   padding: 10px 10px 50px;
+  max-width: 600px;
+  justify-content: center;
 }
 
 .warrior_preview_ul {
@@ -567,13 +575,21 @@ img:not([src]) {
   gap: 10px;
 }
 
+.warrior_slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 .warrior {
   position: relative;
   z-index: 1;
-  width: 180px;
-  max-width: 180px;
+  width: 210px;
+  max-width: 210px;
   aspect-ratio: 1;
-  max-height: 180px;
+  max-height: 210px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -582,7 +598,8 @@ img:not([src]) {
 }
 
 .warrior img {
-  width: 135px;
+  /* width 200 height 252 */
+  width: 180px;
 }
 
 .warrior::before {
@@ -618,17 +635,13 @@ img:not([src]) {
 }
 
 .warrior_action_btns {
-  position: absolute;
-  z-index: 1;
-  bottom: -60px;
-  left: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 5px;
-  width: 220px;
-  transform: translateX(-50%);
+  gap: 10px;
+  width: 100%;
+  padding: 0 15px;
 }
 
 .warrior_info {
@@ -661,7 +674,8 @@ img:not([src]) {
   outline: 2px solid var(--color-012);
   outline-offset: -5px;
   color: var(--color-001);
-  font-size: var(--font-size-h6);
+  font-size: var(--font-size-p);
+  font-weight: bold;
   text-align: center;
   transform: translateY(-50%);
 }
@@ -672,7 +686,7 @@ img:not([src]) {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 37px;
+  height: 47px;
   padding: 5px 15px;
   border: 1px solid var(--color-011);
   border-bottom: 4px solid var(--color-011);
@@ -840,4 +854,90 @@ img:not([src]) {
 .warrior_skills_nav button.warrior_skills_sltd {
   border: 1px solid var(--color-011);
   background-color: #4b2a21;
+}
+
+.top_infobar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+}
+
+.warrior_numb_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.warrior_numb {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--color-011);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 1px var(--color-011);
+  -webkit-box-shadow: 0px 0px 4px 1px var(--color-011);
+  -moz-box-shadow: 0px 0px 4px 1px var(--color-011);
+
+  background-color: #b18965;
+  background: radial-gradient(ellipse farthest-corner at center center, #b18965 0%, #a37c59 80%);
+  background: -webkit-radial-gradient(ellipse farthest-corner at center center, #b18965 0%, #a37c59 80%);
+  background: -moz-radial-gradient(ellipse farthest-corner at center center, #b18965 0%, #a37c59 80%);
+  color: #583926;
+
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.warrior_numb_sltd {
+  background-color: #debc69;
+  background: radial-gradient(ellipse farthest-corner at center center, #debc69 0%, #e2ac6f 80%);
+  background: -webkit-radial-gradient(ellipse farthest-corner at center center, #debc69 0%, #e2ac6f 80%);
+  background: -moz-radial-gradient(ellipse farthest-corner at center center, #debc69 0%, #e2ac6f 80%);
+  color: #924109;
+}
+
+.warrior_numb::before {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: 2px solid var(--color-014);
+}
+
+.player_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 300px;
+  max-height: 28px;
+  padding: 2.5px 10px 2.5px 2.5px;
+  border: 2px solid #41241a;
+  border-radius: 15px;
+  background-color: #482d1f;
+}
+
+.player_info_stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player_info_stat img {
+}
+
+.player_info h6 {
+  font-size: 1.4rem;
+  color: var(--color-014);
 }

@@ -21,7 +21,7 @@ export default function MainNavbar() {
       </button>
       <button>
         <img src={chest} alt="" />
-        <h6>Impostazioni</h6>
+        <h6>Collezione</h6>
       </button>
     </nav>
   );
